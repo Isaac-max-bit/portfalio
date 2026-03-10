@@ -1,0 +1,192 @@
+/* 1. Definición de Variables (Fácil de personalizar) */
+:root {
+    --bg-dark: #0f172a;
+    /* Azul muy oscuro para el fondo */
+    --bg-header: #020617;
+    /* Negro azulado para header/footer */
+    --bg-card: #1e293b;
+    /* Azul grisáceo para las tarjetas */
+    --bg-card-hover: #334155;
+    /* Color cuando pasas el mouse */
+    --primary: #38bdf8;
+    /* Celeste brillante (acentos) */
+    --text-main: #f8fafc;
+    /* Blanco casi puro */
+    --text-muted: #94a3b8;
+    /* Gris para textos secundarios */
+    --transition: 0.3s ease;
+    /* Velocidad de animaciones */
+}
+
+/* 2. Reset y Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    /* Desplazamiento suave al hacer clic en enlaces */
+}
+
+/* 3. Header */
+.main-header {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: var(--bg-header);
+    border-bottom: 1px solid #1e293b;
+}
+
+.main-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+/* 4. Secciones Generales */
+section {
+    padding: 80px 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--primary);
+    position: relative;
+}
+
+/* 5. Tecnologías (Flexbox) */
+.tech-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.tech-box {
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 12px;
+    flex: 1;
+    min-width: 250px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tech-box h3 {
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary);
+    display: inline-block;
+}
+
+.tech-box ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-box li {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--primary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* 6. Proyectos (Grid) */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 15px;
+    transition: transform var(--transition), background var(--transition);
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    background: var(--bg-card-hover);
+}
+
+.project-card h3 {
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.tags span {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 10px;
+    color: var(--primary);
+}
+
+/* 7. Contacto */
+.contact {
+    text-align: center;
+}
+
+.contact-links {
+    margin-top: 20px;
+}
+
+.btn-contact {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: var(--primary);
+    color: var(--bg-header);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: opacity var(--transition);
+}
+
+.btn-contact:hover {
+    opacity: 0.8;
+}
+
+/* 8. Footer */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: var(--bg-header);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* 9. Responsividad */
+@media (max-width: 768px) {
+    section {
+        padding: 50px 5%;
+    }
+
+    .main-header h1 {
+        font-size: 2.2rem;
+    }
+}
