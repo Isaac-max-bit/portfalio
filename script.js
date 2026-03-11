@@ -1,48 +1,62 @@
-/**
- * Script para el Portafolio de Isaac Garcia
- * Funcionalidad: Animación de entrada al hacer scroll
- */
-
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Seleccionamos todos los elementos que queremos animar
-  const scrollElements = document.querySelectorAll(
-    ".project-card, .tech-box, h2",
+  // 1. Iniciar Estrellas
+  const container = document.getElementById("stars-container");
+  for (let i = 0; i < 150; i++) {
+    const star = document.createElement("div");
+    star.style.position = "absolute";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.width = Math.random() * 3 + "px";
+    star.style.height = star.style.width;
+    star.style.backgroundColor = "white";
+    star.style.opacity = Math.random();
+    star.style.borderRadius = "50%";
+    container.appendChild(star);
+  }
+
+  // 2. Reloj del Footer
+  const updateClock = () => {
+    const now = new Date();
+    const d = String(now.getDate()).padStart(2, "0");
+    const h = String(now.getHours()).padStart(2, "0");
+    const m = String(now.getMinutes()).padStart(2, "0");
+    const s = String(now.getSeconds()).padStart(2, "0");
+    const clock = document.getElementById("mission-clock");
+    if (clock) clock.textContent = `${d}:${h}:${m}:${s}`;
+  };
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // 3. Animación de Barras de Progreso
+  const barObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const fills = entry.target.querySelectorAll(".fill");
+          fills.forEach((fill) => {
+            const targetWidth = fill.style.width;
+            fill.style.width = "0";
+            setTimeout(() => (fill.style.width = targetWidth), 200);
+          });
+        }
+      });
+    },
+    { threshold: 0.5 },
   );
 
-  // 2. Configuración del Intersection Observer
-  // Este objeto "observa" cuándo un elemento entra en la pantalla
-  const elementInView = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // Añadimos la clase 'visible' cuando el elemento entra en el viewport
-        entry.target.classList.add("visible");
-      }
-    });
-  };
+  const aboutSection = document.querySelector("#about");
+  if (aboutSection) barObserver.observe(aboutSection);
 
-  const options = {
-    threshold: 0.15, // El elemento debe estar visible al 15% para activarse
-  };
-
-  const observer = new IntersectionObserver(elementInView, options);
-
-  // 3. Aplicamos el observador a cada elemento y preparamos el estilo inicial
-  scrollElements.forEach((el) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
-    el.style.transition = "all 0.6s ease-out";
-    observer.observe(el);
-  });
-
-  // 4. Inyectamos una clase CSS dinámica para la animación
-  const style = document.createElement("style");
-  style.innerHTML = `
-        .visible {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-    `;
-  document.head.appendChild(style);
-
-  console.log("Sistema de revelado activado 🚀");
+  // 4. Simulador de Interferencia en Status
+  const statusTxt = document.getElementById("status-text");
+  setInterval(() => {
+    if (Math.random() > 0.9) {
+      statusTxt.textContent = "SIGNAL_LOST_...";
+      statusTxt.style.color = "var(--nasa-red)";
+      setTimeout(() => {
+        statusTxt.textContent = "TRANSMISIÓN ACTIVA";
+        statusTxt.style.color = "#00ff00";
+      }, 200);
+    }
+  }, 4000);
 });

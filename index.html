@@ -3,119 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isaac Garcia | Front-End Developer</title>
+    <title>Isaac Garcia | Mission Specialist</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'
+     viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='none' stroke='%2300d4ff' stroke-width='5'/><text x='50%25' 
+     y='50%25' dominant-baseline='central' text-anchor='middle' font-family='monospace' font-size='50' fill='%23fc3d21'>IG</text></svg>">
+     
 </head>
-
 <body>
+    <div id="stars-container"></div>
 
-    <header class="main-header">
-        <div class="header-content">
-            <h1>Isaac Garcia</h1>
-            <p class="subtitle">🚀 Front-End Developer | Web Interface Specialist</p>
-        </div>
+    <nav class="nasa-nav">
+        <div class="nav-logo">IG // COMMAND</div>
+        <ul class="nav-links">
+            <li><a href="#about">BIOGRAFÍA</a></li>
+            <li><a href="#tech">SISTEMAS</a></li>
+            <li><a href="#projects">MISIONES</a></li>
+        </ul>
+        <div class="nav-status">STATUS: <span class="pulse-green">STABLE</span></div>
+    </nav>
+
+    <header class="hero-mission">
+        <div class="mission-tag">MISSION: WEB ARCHITECT 2026</div>
+        <h1 class="glitch-text">ISAAC GARCIA</h1>
+        <p class="subtitle">ESPECIALISTA EN INTERFACES DE NAVEGACIÓN</p>
     </header>
 
-    <main>
-        <section class="about" id="about">
-            <h2>Sobre mí</h2>
-            <p>
-                Soy desarrollador especializado en <strong>Front-End Development</strong>,
-                enfocado en crear interfaces modernas, rápidas y accesibles
-                utilizando tecnologías web actuales como React y JavaScript moderno.
-            </p>
-        </section>
-
-        <section class="tech" id="tech">
-            <h2>Tecnologías</h2>
-            <div class="tech-container">
-                
-                <article class="tech-box">
-                    <h3>Front-End</h3>
-                    <ul>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>JavaScript</li>
-                        <li>React</li>
-                    </ul>
-                </article>
-
-                <article class="tech-box">
-                    <h3>Lenguajes</h3>
-                    <ul>
-                        <li>Python</li>
-                    </ul>
-                </article>
-
-                <article class="tech-box">
-                    <h3>Herramientas</h3>
-                    <ul>
-                        <li>Git</li>
-                        <li>GitHub</li>
-                        <li>VS Code</li>
-                    </ul>
-                </article>
-
+    <main class="container">
+        <section id="about" class="section-reveal">
+            <div class="grid-layout">
+                <div class="bio-content">
+                    <h2><span class="prefix">01.</span> PERFIL DEL ESPECIALISTA</h2>
+                    <p>Desarrollador enfocado en la creación de ecosistemas digitales de alto impacto. Mi enfoque combina la precisión técnica con la estética funcional para garantizar experiencias de usuario fluidas.</p>
+                </div>
+                <div class="mission-metrics">
+                    <div class="metric">
+                        <span>EFICIENCIA_CÓDIGO</span>
+                        <div class="bar"><div class="fill" style="width: 95%;"></div></div>
+                    </div>
+                    <div class="metric">
+                        <span>ESTRUCTURA_REACT</span>
+                        <div class="bar"><div class="fill" style="width: 88%;"></div></div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="projects" id="projects">
-            <h2>Proyectos Destacados</h2>
-            <div class="project-grid">
-
-                <article class="project-card">
-                    <h3>Responsive Landing Page</h3>
-                    <p>
-                        Landing page moderna desarrollada con HTML, CSS y JavaScript
-                        con diseño responsive y animaciones CSS.
-                    </p>
-                    <div class="tags">
-                        <span>HTML</span> <span>CSS</span> <span>JS</span>
-                    </div>
+        <section id="projects" class="section-reveal">
+            <h2><span class="prefix">02.</span> HISTORIAL DE MISIONES</h2>
+            <div class="mission-grid">
+                <article class="mission-card">
+                    <div class="card-header">MISSION_ID: 001</div>
+                    <h3>Responsive Landing</h3>
+                    <p>Despliegue de interfaz con optimización de carga atmosférica.</p>
+                    <div class="tech-tags">#HTML #CSS #JS</div>
                 </article>
-
-                <article class="project-card">
-                    <h3>React Web Application</h3>
-                    <p>
-                        Aplicación desarrollada con React usando componentes reutilizables
-                        y consumo de APIs externas.
-                    </p>
-                    <div class="tags">
-                        <span>React</span> <span>API</span>
-                    </div>
+                <article class="mission-card alert">
+                    <div class="card-header">MISSION_ID: 002</div>
+                    <h3>React Web App</h3>
+                    <p>Dashboard de control con integración de datos en tiempo real.</p>
+                    <div class="tech-tags">#REACT #API</div>
                 </article>
-
-                <article class="project-card">
-                    <h3>Python Data Project</h3>
-                    <p>
-                        Proyecto enfocado en análisis de datos utilizando Python,
-                        Pandas y librerías de visualización.
-                    </p>
-                    <div class="tags">
-                        <span>Python</span> <span>Pandas</span>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <section class="contact" id="contact">
-            <h2>Contacto</h2>
-            <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
-            <div class="contact-links">
-                <p>Email: <strong>garciaalejoisaac@gmail.com</strong></p>
-                <a href="https://www.instagram.com/isaacalejandrogarciaamaya/" target="_blank" class="btn-contact">
-                    Instagram
-                </a>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>© 2026 Isaac Garcia • Diseñado con código limpio</p>
+    <footer class="nasa-footer">
+        <div class="footer-scanner"></div>
+        <div class="footer-container">
+            <div class="footer-group">
+                <h4 class="terminal-title">SISTEMA_UBICACIÓN</h4>
+                <div class="telemetry-box">
+                    <p>LAT: 19.4326° N</p>
+                    <p>LONG: 99.1332° W</p>
+                    <p>SECTOR: VÍA LÁCTEA</p>
+                </div>
+            </div>
+            <div class="footer-group central">
+                <h4 class="terminal-title">ESTADO_ENLACE</h4>
+                <div class="status-monitor">
+                    <span class="status-dot"></span>
+                    <span id="status-text">TRANSMISIÓN ACTIVA</span>
+                </div>
+                <div class="social-comms">
+                    <a href="mailto:garciaalejoisaac@gmail.com" class="comm-link">EMAIL_SIGNAL</a>
+                    <a href="https://www.instagram.com/isaacalejandrogarciaamaya/" target="_blank" class="comm-link">Perfil de Instagram</a>
+                </div>
+            </div>
+            <div class="footer-group">
+                <h4 class="terminal-title">TIEMPO_MISIÓN</h4>
+                <div id="mission-clock" class="digital-clock">00:00:00:00</div>
+                <p class="sub-text">T+ DESDE EL LANZAMIENTO</p>
+            </div>
+        </div>
+        <div class="footer-base">
+            <p class="copyright">NASA-CSS-TERMINAL // 2026 // ISAAC GARCIA COMMAND</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
-
 </body>
 </html>
