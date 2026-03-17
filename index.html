@@ -3,103 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isaac Garcia | Mission Specialist</title>
+    <title>Isaac Garcia | Mission Control Center</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'
-     viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='none' stroke='%2300d4ff' stroke-width='5'/><text x='50%25' 
-     y='50%25' dominant-baseline='central' text-anchor='middle' font-family='monospace' font-size='50' fill='%23fc3d21'>IG</text></svg>">
-     
 </head>
 <body>
     <div id="stars-container"></div>
 
     <nav class="nasa-nav">
-        <div class="nav-logo">IG // COMMAND</div>
-        <ul class="nav-links">
-            <li><a href="#about">BIOGRAFÍA</a></li>
-            <li><a href="#tech">SISTEMAS</a></li>
-            <li><a href="#projects">MISIONES</a></li>
-        </ul>
-        <div class="nav-status">STATUS: <span class="pulse-green">STABLE</span></div>
+        <div class="nav-logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-5c1.62-2.2 5-3 5-3"></path><path d="M12 15v5s3.03-.55 5-2c2.2-1.62 3-5 3-5"></path></svg>
+            IG // CMD
+        </div>
+        <div class="nav-links">
+            <a href="#projects">MISIONES</a>
+            <a href="#tech">SISTEMAS</a>
+            <a href="#contact">CONTACTO</a>
+            <a href="#profile">PERFIL</a>
+        </div>
     </nav>
 
-    <header class="hero-mission">
-        <div class="mission-tag">MISSION: WEB ARCHITECT 2026</div>
-        <h1 class="glitch-text">ISAAC GARCIA</h1>
-        <p class="subtitle">ESPECIALISTA EN INTERFACES DE NAVEGACIÓN</p>
-    </header>
+    <main class="main-container">
+        <header class="hero-section section-reveal">
+            <div class="hero-graphic">
+                <svg width="150" height="150" ...>/* Tu SVG aquí */</svg>
+            </div>
+            <h1>ESPECIALISTA EN INTERFACES DE NAVEGACIÓN WEB</h1>
+            <a href="#projects" class="btn-primary">VER MISIONES ACTIVAS</a>
+        </header>
 
-    <main class="container">
-        <section id="about" class="section-reveal">
-            <div class="grid-layout">
-                <div class="bio-content">
-                    <h2><span class="prefix">01.</span> PERFIL DEL ESPECIALISTA</h2>
-                    <p>Desarrollador enfocado en la creación de ecosistemas digitales de alto impacto. Mi enfoque combina la precisión técnica con la estética funcional para garantizar experiencias de usuario fluidas.</p>
-                </div>
-                <div class="mission-metrics">
-                    <div class="metric">
-                        <span>EFICIENCIA_CÓDIGO</span>
-                        <div class="bar"><div class="fill" style="width: 95%;"></div></div>
-                    </div>
-                    <div class="metric">
-                        <span>ESTRUCTURA_REACT</span>
-                        <div class="bar"><div class="fill" style="width: 88%;"></div></div>
+        <section id="featured-project" class="section-reveal">
+            <div class="mission-console">
+                <div class="console-header">// SISTEMA_MONITOR: ALPHA-7</div>
+                <div class="console-body">
+                    <div class="project-mockup" style="background: url('tu-imagen.jpg') center/cover;"></div>
+                    <div class="project-details">
+                        <h3>Misión: React Interface Alpha</h3>
+                        <p>Dashboard de control con telemetría en tiempo real y componentes modulares de alto rendimiento.</p>
+                        <a href="#" class="btn-text">ABRIR TRANSMISIÓN <span class="prefix">-></span></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="section-reveal">
-            <h2><span class="prefix">02.</span> HISTORIAL DE MISIONES</h2>
-            <div class="mission-grid">
-                <article class="mission-card">
-                    <div class="card-header">MISSION_ID: 001</div>
-                    <h3>Responsive Landing</h3>
-                    <p>Despliegue de interfaz con optimización de carga atmosférica.</p>
-                    <div class="tech-tags">#HTML #CSS #JS</div>
+        <section id="tech" class="section-reveal">
+            <h2>KITS DE HERRAMIENTAS TÉCNICAS</h2>
+            <div class="tech-grid">
+                <article class="tech-card">
+                    <svg ...>/* Icono HTML */</svg>
+                    <h4>Propulsión Front-End</h4>
+                    <p>Dominio de HTML5 semántico y CSS3 avanzado.</p>
+                    <a href="#" class="btn-text">DETALLES SISTEMA</a>
                 </article>
-                <article class="mission-card alert">
-                    <div class="card-header">MISSION_ID: 002</div>
-                    <h3>React Web App</h3>
-                    <p>Dashboard de control con integración de datos en tiempo real.</p>
-                    <div class="tech-tags">#REACT #API</div>
+                <article class="tech-card">
+                    <svg ...>/* Icono JS */</svg>
+                    <h4>Módulos de Reacción (React)</h4>
+                    <p>Desarrollo de componentes escalables y gestión de estado.</p>
+                    <a href="#" class="btn-text">DETALLES SISTEMA</a>
                 </article>
+                </div>
+        </section>
+
+        <section class="section-reveal">
+            <h2>BITÁCORA DE MISIONES ADICIONALES</h2>
+            <div class="projects-visual-grid">
+                <article class="project-card-visual gradient-nasa">
+                    <span class="prefix">ID_001</span>
+                    <h3>Landing Page Recon</h3>
+                </article>
+                <article class="project-card-visual gradient-cyber">
+                    <span class="prefix">ID_002</span>
+                    <h3>API Data Matrix</h3>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-reveal">
+            <h2>LOGS DE SISTEMAS DISPONIBLES</h2>
+            <div class="logs-list">
+                <div class="log-item">
+                    <span>SISTEMA: GIT_CONTROL</span>
+                    <span>ESTADO: <span class="pulse-green">ONLINE</span></span>
+                    <a href="#" class="btn-log">VER DETALLES</a>
+                </div>
+                <div class="log-item">
+                    <span>SISTEMA: VS_CODE_HUB</span>
+                    <span>ESTADO: <span class="pulse-green">ONLINE</span></span>
+                    <a href="#" class="btn-log">VER DETALLES</a>
+                </div>
+                </div>
+        </section>
+
+        <section id="contact" class="section-reveal">
+            <div class="grid-2col">
+                <div class="contact-text">
+                    <h2>LISTO PARA EL LANZAMIENTO?</h2>
+                    <p>Inicia una nueva transmisión si tienes un proyecto en mente.</p>
+                </div>
+                <div class="contact-action">
+                    <svg ...>/* Icono de Antena SVG */</svg>
+                    <a href="mailto:garciaalejoisaac@gmail.com" class="btn-primary">ABRIR COMUNICACIONES</a>
+                </div>
             </div>
         </section>
     </main>
 
     <footer class="nasa-footer">
-        <div class="footer-scanner"></div>
-        <div class="footer-container">
-            <div class="footer-group">
-                <h4 class="terminal-title">SISTEMA_UBICACIÓN</h4>
-                <div class="telemetry-box">
-                    <p>LAT: 19.4326° N</p>
-                    <p>LONG: 99.1332° W</p>
-                    <p>SECTOR: VÍA LÁCTEA</p>
-                </div>
-            </div>
-            <div class="footer-group central">
-                <h4 class="terminal-title">ESTADO_ENLACE</h4>
-                <div class="status-monitor">
-                    <span class="status-dot"></span>
-                    <span id="status-text">TRANSMISIÓN ACTIVA</span>
-                </div>
-                <div class="social-comms">
-                    <a href="mailto:garciaalejoisaac@gmail.com" class="comm-link">EMAIL_SIGNAL</a>
-                    <a href="https://www.instagram.com/isaacalejandrogarciaamaya/" target="_blank" class="comm-link">Perfil de Instagram</a>
-                </div>
-            </div>
-            <div class="footer-group">
-                <h4 class="terminal-title">TIEMPO_MISIÓN</h4>
-                <div id="mission-clock" class="digital-clock">00:00:00:00</div>
-                <p class="sub-text">T+ DESDE EL LANZAMIENTO</p>
-            </div>
-        </div>
-        <div class="footer-base">
-            <p class="copyright">NASA-CSS-TERMINAL // 2026 // ISAAC GARCIA COMMAND</p>
-        </div>
-    </footer>
+        </footer>
 
     <script src="script.js"></script>
 </body>

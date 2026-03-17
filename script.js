@@ -1,62 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Iniciar Estrellas
-  const container = document.getElementById("stars-container");
-  for (let i = 0; i < 150; i++) {
-    const star = document.createElement("div");
-    star.style.position = "absolute";
-    star.style.left = Math.random() * 100 + "%";
-    star.style.top = Math.random() * 100 + "%";
-    star.style.width = Math.random() * 3 + "px";
-    star.style.height = star.style.width;
-    star.style.backgroundColor = "white";
-    star.style.opacity = Math.random();
-    star.style.borderRadius = "50%";
-    container.appendChild(star);
-  }
+    // 1. Iniciar Fondo Estelar Dinámico
+    initStars();
 
-  // 2. Reloj del Footer
-  const updateClock = () => {
-    const now = new Date();
-    const d = String(now.getDate()).padStart(2, "0");
-    const h = String(now.getHours()).padStart(2, "0");
-    const m = String(now.getMinutes()).padStart(2, "0");
-    const s = String(now.getSeconds()).padStart(2, "0");
-    const clock = document.getElementById("mission-clock");
-    if (clock) clock.textContent = `${d}:${h}:${m}:${s}`;
-  };
-  setInterval(updateClock, 1000);
-  updateClock();
+    // 2. Observer para revelado de secciones
+    const sections = document.querySelectorAll('.section-reveal');
+    const revealOptions = { threshold: 0.1 };
 
-  // 3. Animación de Barras de Progreso
-  const barObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const fills = entry.target.querySelectorAll(".fill");
-          fills.forEach((fill) => {
-            const targetWidth = fill.style.width;
-            fill.style.width = "0";
-            setTimeout(() => (fill.style.width = targetWidth), 200);
-          });
-        }
-      });
-    },
-    { threshold: 0.5 },
-  );
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, revealOptions);
 
-  const aboutSection = document.querySelector("#about");
-  if (aboutSection) barObserver.observe(aboutSection);
-
-  // 4. Simulador de Interferencia en Status
-  const statusTxt = document.getElementById("status-text");
-  setInterval(() => {
-    if (Math.random() > 0.9) {
-      statusTxt.textContent = "SIGNAL_LOST_...";
-      statusTxt.style.color = "var(--nasa-red)";
-      setTimeout(() => {
-        statusTxt.textContent = "TRANSMISIÓN ACTIVA";
-        statusTxt.style.color = "#00ff00";
-      }, 200);
-    }
-  }, 4000);
+    sections.forEach(section => revealObserver.observe(section));
 });
+
+function initStars() {
+    const container = document.getElementById('stars-container');
+    const starCount = 200;
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.style.position = 'absolute';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.width = Math.random() * 2 + 'px';
+        star.style.height = star.style.width;
+        star.style.backgroundColor = 'white';
+        star.style.opacity = Math.random();
+        container.appendChild(star);
+    }
+}
